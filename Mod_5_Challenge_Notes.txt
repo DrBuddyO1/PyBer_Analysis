@@ -1,0 +1,128 @@
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+DELIVERABLE #! 
+
+Deliverable 1 Instructions
+Using the Pandas groupby() function with the count() and sum() methods on PyBer DataFrame columns, get the total number of rides, total number of drivers, and the total fares for each city type. Then, calculate the average fare per ride and average fare per driver for each city type. Finally, add this data to a new DataFrame, then format the columns.
+
+For this deliverable, you’ve already done the following in this module:
+
+Lesson 5.3.2: Use the groupby() function
+https://courses.bootcampspot.com/courses/755/pages/5-dot-3-2-get-the-number-of-rides-for-each-city-type
+Lesson 5.3.2: Use the count() method
+https://courses.bootcampspot.com/courses/755/pages/5-dot-3-2-get-the-number-of-rides-for-each-city-type
+Lesson 5.4.1: Format numbers and strings
+https://courses.bootcampspot.com/courses/755/pages/5-dot-4-1-summary-statistics-for-number-of-rides-by-city-type
+Lesson 5.5.1: Use the sum() method
+https://courses.bootcampspot.com/courses/755/pages/5-dot-5-1-get-the-percentage-of-fares-for-each-city-type
+
+Download the PyBer_Challenge_starter_code.ipynb file into your PyBer_Analysis folder and rename it PyBer_Challenge.ipynb.
+Use the step-by-step instructions below to add code where indicated by the numbered comments in the starter code file.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CURRENT LOCATION IN WORK
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+In Step 1, use the groupby() function to create a Series of data that has the type of city as the index, then apply the count() method to the "ride_id" column.
+In Step 2, use the groupby() function to create a Series of data that has the type of city as the index, then apply the sum() method to the "driver_count" column.
+In Step 3, use the groupby() function to create a Series of data that has the type of city as the index, then apply the sum() method to the "fare" column.
+In Step 4, calculate the average fare per ride by city type by dividing the sum of all the fares by the total rides.
+In Step 5, calculate the average fare per driver by city type by dividing the sum of all the fares by the total drivers.
+In Step 6, create a PyBer summary DataFrame with all the data gathered from Steps 1-5, using the column names shown below:.
+
+The unformatted PyBer summary DataFrame showing the “Total Rides,” “Total Drivers,” “Total Fares,” “Average Fare per Ride,” and “Average Fare per Driver by city type.
+https://courses.bootcampspot.com/courses/755/assignments/16388?module_item_id=264797
+
+In Step 7, use the provided code snippet to remove the index name ("type") from the PyBer summary DataFrame.
+In Step 8, format the columns of the Pyber summary DataFrame to look like this:
+
+The formatted summary DataFrame showing the “Total Rides,” “Total Drivers,” “Total Fares,” “Average Fare per Ride,” and “Average Fare per Driver” by city type
+https://courses.bootcampspot.com/courses/755/assignments/16388?module_item_id=264797
+
+Deliverable 1 Requirements
+You will earn a perfect score for Deliverable 1 by completing all requirements below:
+
+The total number of rides for each city type is retrieved. (5 pt)
+The total number of drivers for each city type is retrieved. (5 pt)
+​The sum of the fares for each city type is retrieved. (5 pt)
+​The average fare per ride for each city type is calculated. (5 pt)
+The average fare per driver for each city type is calculated. (5 pt)
+A PyBer summary DataFrame is created. (5 pt)
+The PyBer summary DataFrame is formatted as shown in the example. (5 pt)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DELIVERABLE #2
+Deliverable 2: A multiple-line chart of total fares for each city type (45 points)
+Deliverable 2 Instructions
+Using your Pandas skills and two new functions, pivot() andresample(), create a multiple-line graph that shows the total fares for each week by city type.
+
+Lesson 5.1.3: Create a line chart using the object-oriented interface method
+https://courses.bootcampspot.com/courses/755/pages/5-dot-1-3-create-line-charts
+Lesson 5.1.4: Annotate charts
+https://courses.bootcampspot.com/courses/755/pages/5-dot-1-4-annotate-charts
+Lesson 5.1.10: Graph a Pandas DataFrame
+https://courses.bootcampspot.com/courses/755/pages/5-dot-1-10-plot-a-pandas-dataframe-and-series
+Lesson 5.3.2: Use the groupby() function
+https://courses.bootcampspot.com/courses/755/pages/5-dot-3-2-get-the-number-of-rides-for-each-city-type
+Lesson 5.5.1: Use the sum() method
+https://courses.bootcampspot.com/courses/755/pages/5-dot-5-1-get-the-percentage-of-fares-for-each-city-type
+
+Use the step-by-step instructions below to add code where indicated by the numbered comments in the starter code file:
+
+In Step 1, create a new DataFrame with multiple indices using the groupby() function on the "type" and "date" columns of the pyber_data_df DataFrame, then apply the sum() method on the "fare" column to show the total fare amount for each date.
+In Step 2, use the provided code snippet to reset the index. This is needed to use the pivot() function in the next step (Step 3).
+In Step 3, use the pivot() function to convert the DataFrame from the previous step so that the index is the "date," each column is a city "type," and the values are the "fare."
+
+After this step, you’ll see that each cell has the total fare for the date and time, as shown in the following image.
+Note: In cells where there is no fare to be summed for that row, the cell will be filled with NaNs.
+
+A DataFrame with the date as the index and the different types of cities as the columns, with the total fare for the date in each cell
+
+If you’d like a hint on how to create a pivot table from a DataFrame, that’s totally okay. If not, that’s great too. You can always revisit this later if you change your mind.
+
+In Step 4, create a new DataFrame by using the loc method on the following date range: 2019-01-01 through 2019-04-28.
+In Step 5, use the provided code snippet to reset the index of the DataFrame from the previous step (Step 4) to a datetime data type. This is necessary to use the resample() method in Step 7.
+In Step 6, use the provided code snippet, df.info(), to check that the "date" is a datetime data type.
+In Step 7, create a new DataFrame by applying the resample() function to the DataFrame you modified in Step 5. Resample the data in weekly bins, then apply the sum() method to get the total fares for each week.
+
+If you’d like a hint on how to create a pivot table from a DataFrame, that’s totally okay. If not, that’s great too. You can always revisit this later if you change your mind.
+
+Finally, in Step 8, graph the resampled DataFrame from Step 7 using the object-oriented interface method and the df.plot() method, as well as the Matplotlib "fivethirtyeight" graph style code snippet provided in the starter code. Annotate the y-axis label and the title, then use the appropriate code to save the figure as PyBer_fare_summary.png in your "analysis" folder.
+
+Confirm that your multiple-line chart looks like the following image, where each week is a peak or dip in the line graphs.
+
+Deliverable 2 Requirements
+You will earn a perfect score for Deliverable 2 by completing all requirements below:
+
+A DataFrame was created using the groupby() function on the "type" and "date" columns, and the sum() method is applied on the "fare" column to show the total fare amount for each date and time. (10 pt)
+A DataFrame was created using the pivot() function where the index is the "date," the columns are the city "type," and the values are the "fare." (10 pt)
+A DataFrame was created using the loc method on the date range: 2019-01-01 through 2019-04-28. (5 pt)
+A DataFrame was created using the resample() function in weekly bins and shows the sum of the fares for each week. (10 pt)
+An annotated chart showing the total fares by city type is created and saved to the "analysis" folder. (10 pt)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Deliverable 3 Requirements
+Structure, Organization, and Formatting (6 points)
+The written analysis has the following structure, organization, and formatting:
+
+There is a title, and there are multiple sections. (2 pt)
+Each section has a heading and subheading. (2 pt)
+Links to images are working and displayed correctly. (2 pt)
+Analysis (14 points)
+The written analysis has the following:
+
+Overview of the analysis:
+
+The purpose of the new analysis is well defined. (3 pt)
+Results:
+
+There is a description of the differences in ride-sharing data among the different city types. Ride-sharing data include the total rides, total drivers, total fares, average fare per ride and driver, and total fare by city type. (7 pt)
+Summary:
+
+There is a statement summarizing three business recommendations to the CEO for addressing any disparities among the city types. (4 pt)
